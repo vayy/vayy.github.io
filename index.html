@@ -3,19 +3,41 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
+	<style type="text/css">
+		.come{
+			display: none;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom:0;
+			margin:auto;
+			width:500px;
+			height:100px;
+			font-size: 100px
+		}
+	</style>
 </head>
 <body>
 	<h1>大爷，快来玩玩嘛！</h1>
-	<form>
-		<label>
-			我叫什么名字？
-			<input type="text"/>
-		</label>
-		<button type="submit">确定</button>
-	</form>
-	
-	<div style="font-size: 100px;text-align: center;"></div>
+	<button>点击播放声音</button>
+	<h1 class="come">来嘛来嘛！</h1>
 </body>
 </html>
 
-<script type="text/javascript" src='getMessage.js'></script>
+<script type="text/javascript" src='jquery-1.11.3.min.js'></script>
+
+<script type="text/javascript">
+	$(function(){ 
+	    $('button').click(function(){  
+	         $('embed').remove();
+
+	         $('body').append('<embed src="【音效】亚卖呆.wav" autostart="true" hidden="true" loop="false">');
+
+	         $('.come').css('display','block');
+	         setTimeout(function (){
+	         	$('.come').css('display','none');
+	         },3000)
+    	}); 
+	});
+</script>
